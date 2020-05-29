@@ -39,26 +39,45 @@ void ShowInstruments()
 		Instrument("Clarinet", 550.00)
 	};
 
-	for (const Instrument i : Instruments)
+	int count = sizeof(Instruments)/sizeof(Instruments[0]);
+
+	//for (const Instrument i : Instruments)
+	//{
+	//	cout << "Item Name: " << i.i_name << endl;
+	//	cout << "Price: " << i.i_price << endl;
+	//	cout << "---------------------" << endl;
+	//}
+	for (int i = 0; i < count; i++)
 	{
-		cout << "Item Name: " << i.i_name << endl;
-		cout << "Price: " << i.i_price << endl;
-		cout << "---------------------" << endl;
+		cout << i + 1 << ") " << "Name: " << Instruments[i].i_name << "    Price: $" << Instruments[i].i_price << endl;
+		cout << "-----------------------------" << endl;
 	}
+
+}
+
+void ShoppingMenu()
+{
 
 }
 
 void ShowCart(vector<Instrument> shoppingCart)
 {
+
 	if (shoppingCart.size() == 0)
 	{
 		cout << "Your shopping cart is empty." << endl;
-	} 
-	else 
+	}
+	else
 	{
-		for (const Instrument i : shoppingCart)
+
+		for (int i = 0; i < shoppingCart.size(); i++)
 		{
-			cout << i.i_name << endl;
+			cout << shoppingCart[i].i_name << endl;
 		}
+
+		//for (const Instrument i : shoppingCart)
+		//{
+		//	cout << i.i_name << endl;
+		//}
 	}
 }
