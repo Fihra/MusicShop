@@ -16,9 +16,25 @@ int main()
 	vector<Instrument> shoppingCart;
 
 	string name;
+	int choice;
 
 	name = Intro();
 	cout << "Nice to meet you " << name << "." << endl;
 	Menu();
+	cin >> choice;
+	switch (choice)
+	{
+		case 1:
+			ShowInstruments();
+			break;
+		case 2:
+			ShowCart(shoppingCart);
+			break;
+		default:
+			cout << "Invalid choice" << endl;
+			break;
+	}
+	
+
 	
 }
