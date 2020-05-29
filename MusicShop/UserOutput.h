@@ -3,6 +3,7 @@
 #include <string>
 #include <stdlib.h>
 #include "Instrument.h"
+#include "User.h"
 #include <vector>
 using namespace std;
 
@@ -20,8 +21,9 @@ void Menu()
 	cout << "Main Menu" << endl;
 	cout << "1) View Products" << endl;
 	cout << "2) View Cart" << endl;
-	cout << "3) Exit" << endl;
-	cout << "Choice: " << endl;
+	cout << "3) Load Wallet" << endl;
+	cout << "4) Exit" << endl;
+	cout << "Choice: ";
 }
 
 void ShowProducts()
@@ -57,6 +59,19 @@ void ShowInstruments()
 
 void ShoppingMenu()
 {
+	cout << "1) Choose a number to add in cart." << endl;
+	cout << "2) Choose a number to remove from cart." << endl;
+	cout << "3) Go Back." << endl;
+	cout << "Choice: ";
+}
+
+void AddToCart()
+{
+
+}
+
+void RemoveFromCart()
+{
 
 }
 
@@ -72,7 +87,7 @@ void ShowCart(vector<Instrument> shoppingCart)
 
 		for (int i = 0; i < shoppingCart.size(); i++)
 		{
-			cout << shoppingCart[i].i_name << endl;
+			cout << i + 1 << ") " << shoppingCart[i].i_name << endl;
 		}
 
 		//for (const Instrument i : shoppingCart)

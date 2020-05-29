@@ -8,6 +8,7 @@
 #include <vector>
 
 #include "Instrument.h"
+#include "User.h"
 
 using namespace std;
 
@@ -19,22 +20,35 @@ int main()
 	int choice;
 
 	name = Intro();
-	cout << "Nice to meet you " << name << "." << endl;
-	Menu();
-	cin >> choice;
-	switch (choice)
+	User *mainUser = new User(name);
+	cout << "Nice to meet you " << mainUser->username << "." << endl;
+	cout << "Your current wallet balance: $" << mainUser->userwallet << endl;
+
+	do
 	{
+		Menu();
+		cin >> choice;
+		switch (choice)
+		{
 		case 1:
 			ShowInstruments();
 			break;
 		case 2:
+			cout << "Your wallet balance: $" << mainUser->ShowWalletBalance() << endl;
 			ShowCart(shoppingCart);
+			ShoppingMenu();
+			break;
+		case 3:
+			mainUser->LoadWallet();
+			break;
+		case 4:
 			break;
 		default:
 			cout << "Invalid choice" << endl;
-			break;
-	}
-	
+		}
+	} while (choice != 4);
 
+	cout << "Thank you for shopping. Please come again." << endl;
+	
 	
 }
