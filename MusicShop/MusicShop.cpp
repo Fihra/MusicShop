@@ -14,7 +14,7 @@ using namespace std;
 
 int main()
 {	
-	vector<Instrument> shoppingCart;
+	
 
 	string name;
 	int choice;
@@ -35,11 +35,12 @@ int main()
 			break;
 		case 2:
 			cout << "Your wallet balance: $" << mainUser->ShowWalletBalance() << endl;
-			ShowCart(shoppingCart);
+			ShowCart(mainUser->userCart);
 			ShoppingMenu();
 			break;
 		case 3:
 			mainUser->LoadWallet();
+			cout << "Loaded $100.50" << endl;
 			break;
 		case 4:
 			break;

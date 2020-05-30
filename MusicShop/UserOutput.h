@@ -7,6 +7,9 @@
 #include <vector>
 using namespace std;
 
+void AddToCart();
+void RemoveFromCart();
+
 string Intro()
 {
 	cout << "Music Shop" << endl;
@@ -57,22 +60,46 @@ void ShowInstruments()
 
 }
 
-void ShoppingMenu()
+int ShoppingMenu()
 {
+	int inputChoice;
 	cout << "1) Choose a number to add in cart." << endl;
 	cout << "2) Choose a number to remove from cart." << endl;
 	cout << "3) Go Back." << endl;
 	cout << "Choice: ";
+
+	do 
+	{
+		cin >> inputChoice;
+		switch (inputChoice)
+		{
+		case 1:
+			AddToCart();
+			return 1;
+			break;
+		case 2:
+			RemoveFromCart();
+			return 2;
+			break;
+		case 3:
+			return 3;
+			break;
+		default:
+			cout << "Invalid input." << endl;
+			break;
+		}
+	} while (inputChoice != 3);
+
 }
 
 void AddToCart()
 {
-
+	cout << "Inside Add to Cart" << endl;
 }
 
 void RemoveFromCart()
 {
-
+	cout << "Inside Remove to Cart" << endl;
 }
 
 void ShowCart(vector<Instrument> shoppingCart)
